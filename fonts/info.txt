@@ -1,0 +1,2 @@
+This folder contains all fonts used for the application.
+The extensions are either .otf or .ttf
