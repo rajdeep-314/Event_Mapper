@@ -109,7 +109,7 @@ def comparison_function(input_list):
 
 
 # Reads the events database and returns a dictionary for events being organized at venue
-def obtain_events(venue):
+def obtain_events(venue=""):
     with open("events.txt", "r") as events_file:
         data = [entry for entry in events_file.read().split("\n")[:-1]]
 
@@ -119,7 +119,7 @@ def obtain_events(venue):
         event_name, other = entry.split("||")
         extracted_data = other.split("|")
 
-        if extracted_data[0] == venue:
+        if venue == "" or extracted_data[0] == venue:
             output_dict[event_name] = extracted_data
 
     return output_dict
@@ -873,12 +873,8 @@ class MapScreen(ScatterLayout):
         time = self.time_input.text
         description = self.description_input.text
 
-        # Obtains the current events from the database
-        with open("events.txt", "r") as events_file:
-            events_data = events_file.read().split("\n")[:-1]
-
-        # Obtaining a dictionary for the events
-        events_dict = {entry.split("||")[0]: entry.split("||")[1].split("|") for entry in events_data}
+        # Obtaining the current events from the database and storing them in a dictionary
+        events_dict = obtain_events()
 
         # Input Validation
         if not (name and date and time and description):  # IF one of the fields is empty
@@ -1097,7 +1093,7 @@ class MapScreen(ScatterLayout):
                                                    color=white
                                                    ))
 
-        # Add events option for organisers
+        # "Add events" option for organisers
         if current_username:
             layout.add_widget(add_events_button_layout)
 
@@ -1193,7 +1189,6 @@ class MapScreen(ScatterLayout):
             return events_dict
 
         # Handling non-empty inputs
-        # Format of entries of events_list : [event_name, number of minutes since 1 January 1970]
         initial_datetime = datetime(1970, 1, 1)
         events_list = []
 
@@ -1215,10 +1210,7 @@ class MapScreen(ScatterLayout):
 
 # Removes those events from the events file that have already ended
 def update_events_file():
-    with open("events.txt", "r") as event_file:
-        events_data = event_file.read().split("\n")[:-1]
-
-    events_dict = {entry.split("||")[0]: entry.split("||")[1].split("|") for entry in events_data}
+    events_dict = obtain_events() # Obtaining the current events in the form of a dictionary
 
     new_events_dict = {}
 
