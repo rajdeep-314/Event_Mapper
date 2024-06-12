@@ -73,7 +73,7 @@ The logout button logs out the user and takes them back to the starting page.
 
 <br>
 
-### Contributions :
+### Contributions
 
 i) Rajdeep :
 - Designed the starting and login pages, which manage the credentials database.
@@ -90,3 +90,11 @@ ii) Raagam Parmar Hitesh :
 iii) Souransu Roy :
 - Worked on the visual aspect of the landmark buttons and the displayed events.
 - Designed a base framework for storing and managing events.
+
+<br>
+
+### Appendices
+
+![Nila Map](images/nila_map.png)
+
+An image of the Nila Campus made using AutoCAD
