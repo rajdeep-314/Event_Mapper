@@ -97,4 +97,4 @@ iii) Souransu Roy :
 
 ![Nila Map](images/nila_map.png)
 
-An image of the Nila Campus made using AutoCAD
+<p align="center"> An image of the Nila Campus made using AutoCAD </p>
