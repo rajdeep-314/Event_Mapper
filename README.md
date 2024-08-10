@@ -2,7 +2,7 @@
 
 ### Developed by :
 
-- [Rajdeep (122301034)](https://github.com/rajdeep-314)
+- [Rajdeep (112301045)](https://github.com/rajdeep-314)
 - [Raagam Hitesh Parmar (112301024)](https://github.com/Raagam-Parmar)
 - [Souransu Roy (122301038)](https://github.com/Souransu-roy)
 
